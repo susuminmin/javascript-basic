@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clicked</title>
+</head>
+<body>
+  <h1>0</h1>
+  <button id="change-btn">Click It</button>
+
+  <script>
+  // 1. #change-btnm 을 button 상수에 할당
+  const button = document.querySelector('#change-btn')
+
+  // 2. h1 태그를 header 상수에 할당
+  const header = document.querySelector('h1')
+
+  // 3. clickCount 변수를 0으로 초기화 
+  let clickCount = 0
+
+  // 4. button 에 `click` eventListener 추가. 클릭이 발생하면
+  button.addEventListener('click', () => {
+    clickCount = clickCount + 1
+    header.innerText = clickCount
+  })
+
+
+  </script>
+</body>
+</html>

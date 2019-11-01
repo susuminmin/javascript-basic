@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping List</title>
+</head>
+
+<body>
+  <h1>My Shopping List</h1>
+  <div>
+    Enter a new item:
+    <input type="text" id="input">
+    <button id='add-item'>Add Item</button>
+    <ul id="items">
+    </ul>
+  </div>
+
+  <script>
+    const items = document.querySelector('#items')
+    const button = document.querySelector('#add-item')
+    const item = document.querySelector('#input')
+
+    button.addEventListener('click', () => {
+      if (item.value != '') {
+        const newItem = document.createElement('li')
+        const delButton = document.createElement('button')
+        delButton.innerText = '삭제'
+
+        delButton.addEventListener('click', () => {
+          newItem.remove()
+        })
+
+        // newItem.id = "newItem"
+        newItem.innerText = item.value
+        newItem.appendChild(delButton)
+        // console.log(newItem)
+
+        items.appendChild(newItem)
+        item.value = ''
+        return
+      }
+      // text 아무것도 없을 때만 실행 - 예외처리
+      alert('값을 넣으셈')
+    })
+    // const button = document.querySelector('#add-item')
+
+  </script>
+</body>
+
+</html>
+
+<!-- innerText -->
+<!-- value -->
+<!-- element 만들고 / 특정 위치 삽입 / eventlistener -->

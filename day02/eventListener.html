@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event Listener</title>
+</head>
+
+<body>
+  <h1 id="header"></h1>
+  <button id="my-button">Click me!</button>
+
+  <script>
+    const button = document.querySelector('#my-button')
+    button.addEventListener('click', () => {
+      console.log('아야!')
+    })
+    // 클릭을 실행할 때 마다 () => {} 함수를 실행하겠다.
+  </script>
+</body>
+
+</html>
+<!-- JS 함수 : 1급 객체 -->

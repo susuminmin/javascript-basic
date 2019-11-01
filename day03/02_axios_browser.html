@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Use Axios</title>
+</head>
+<body>
+
+  <script>
+    // 요청을 보낼 url 정의 
+    const url = `https://koreanjson.com/posts/1`
+
+    // Axios 이용하여 url 로 GET 요청 보냄 
+    // (비동기) 바로 응답 못 받기 때문에 .then 함수 사용함
+    // --> 요청을 받으면, 이 함수를 실행해 의미
+    axios.get(url)
+
+      // r그리고 응답이 도착한 다음(.then) 실행할 함수 정의 
+      //(응답 내용을 함수 인자로 받음)
+      .then(function(response) {
+        console.log(response)
+      })
+
+
+    // 실습) content 받아와서 write 하기 
+    axios.get(url)
+      .then(function(response) {
+        const data = response.data
+        document.write(data.content)
+      })
+
+
+  </script>
+
+
+</body>
+
+
+
+
+</html>
