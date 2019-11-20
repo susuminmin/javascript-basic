@@ -24,7 +24,7 @@
 
 
 <body>
-  <h1 style="color:wheat; text-align: center; font-size: 100px;"></h1>
+  <h1 style="color:white; text-align: center; font-size: 65px;"></h1>
   <h2 style="text-align: center; font-size: 50px; color: thistle;">To Do List</h2>
   <div style="text-align: center;">
     <input type="text" id="input">
@@ -40,23 +40,24 @@
 
     // 1. Axios 로 image url 가져오기
 
-    // Array.prototype.sample = function () {
-    //   return this[Math.floor(Math.random() * this.length)];
-    // }
+    Array.prototype.sample = function () {
+      return this[Math.floor(Math.random() * this.length)];
+    }
 
     const API_URL = 'https://source.unsplash.com/1920x1080/?nature,water'
 
-    // let images = ['unsung.jpg', 'image.png', '혜련수지.png', '메텔.jpg', '가영.png', '수지.jpg', '수지2.jpg', '수지3.png', '수지4.png']
+    
+    let images = ['image.png', '혜련수지.png', '메텔.jpg', '수지.jpg', '수지2.jpg', '수지3.png', '수지4.png', '숮1.jpg', '숮2.jpg']
 
     // let now = new Date().toLocaleTimeString()
-    let text = `⎝⎛° ͜ʖ°⎞⎠ પ ભય નુૂપ (...)`
+    let text = `⎝⎛° ͜ʖ°⎞⎠ પ ભય નુૂપ ...`
     // console.log(now)
     let h1 = document.querySelector('h1')
     // h1.innerText = now
 
     setInterval(function () {
       const time = new Date().toLocaleTimeString()
-      h1.innerText = time + text
+      h1.innerText = time +'\n' + '\n' + text
     }, 1000)
 
 
@@ -69,8 +70,8 @@
         // image.alt = 'image'
         const background = document.querySelector('body')
         // background.style.backgroundImage = `url(${imageUrl})`
-        // let suzy = images.sample()
-        background.style.backgroundImage = `url(${imageUrl})`
+        let suzy = images.sample()
+        background.style.backgroundImage = `url(${suzy})`
 
       })
 
